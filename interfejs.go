@@ -18,8 +18,6 @@ func interfejs() {
 		var znak string
 		fmt.Scan(&znak)
 
-		fmt.Println("znak to ", znak)
-
 		if strings.EqualFold(znak, "l") {
 			fmt.Println("Ilosc zadan na liscie to", ilosc_zadan)
 		} else if strings.EqualFold(znak, "m") {
