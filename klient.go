@@ -14,11 +14,11 @@ func klient(id int, magazyn_klient <-chan int) {
 		select {
 		case produkt = <-magazyn_klient:
 			if tryb_symulacji == GADATLIWY {
-				fmt.Println(id, "klient wybral produkt z magazynu:", produkt)
+				fmt.Println("Klient", id, "wybral produkt z magazynu:", produkt)
 			}
 		case <-time.After(time.Millisecond * time.Duration(opoznienie_klientow)):
 			if tryb_symulacji == GADATLIWY {
-				fmt.Println(id, "klient probowal wybrac produkt z magazunu, jednak magazyn jest pusty")
+				//fmt.Println("Klient", id, "probowal wybrac produkt z magazunu, jednak magazyn jest pusty")
 			}
 		}
 

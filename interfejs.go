@@ -12,7 +12,7 @@ func wypisz_polecenia() {
 	fmt.Println("k - koniec")
 }
 
-func interfejs() {
+func interfejs(koniec chan bool) {
 	for {
 		wypisz_polecenia()
 		var znak string
@@ -23,6 +23,7 @@ func interfejs() {
 		} else if strings.EqualFold(znak, "m") {
 			fmt.Println("Ilosc produktow w magazynie to", ilosc_produktow)
 		} else if strings.EqualFold(znak, "k") {
+			koniec <- true
 			return
 		}
 	}
